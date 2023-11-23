@@ -1,0 +1,30 @@
+{
+
+    "data": [
+    {
+        "question": "Ibu kota Indonesia saat ini ? ",
+        "choices": ["Jakarta", "Lampung", "Medan", "Surabaya"],
+        "answer": "Jakarta" 
+    },
+    {
+        "question": "Presiden pertama Indonesia ? ",
+        "choices": ["Jokowo", "Megawati", "Soekarno", "SBY"],
+        "answer": "Soekarno" 
+    },
+    {
+        "question": "Ibu kota Indonesia saat ini ? ",
+        "choices": ["Jakarta", "Lampung", "Medan", "Surabaya"],
+        "answer": "Jakarta" 
+    },
+    {
+        "question": "Ibu kota Indonesia saat ini ? ",
+        "choices": ["Jakarta", "Lampung", "Medan", "Surabaya"],
+        "answer": "Jakarta" 
+    },
+    {
+        "question": "Ibu kota Indonesia saat ini ? ",
+        "choices": ["Jakarta", "Lampung", "Medan", "Surabaya"],
+        "answer": "Jakarta" 
+    }
+    ]
+}
