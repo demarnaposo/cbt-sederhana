@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Start from './components/Start';
 import Question from './components/Question';
 import { useState } from 'react';
 import data from './data/quiz.json';
+import End from './components/End';
 
 const arrayRandom = ([...arr]) => {
 
@@ -15,24 +16,36 @@ const arrayRandom = ([...arr]) => {
   return arr;
 }
 
-const resultArray = arrayRandom(data.data)
+const resultArray = arrayRandom(data.data).slice(0,5);
 
+let interval;
 function App() {
   const [step , setStep] = useState(1);
-  const [activeQuestion , setActiveQuestion] = useState(0)
+  const [activeQuestion , setActiveQuestion] = useState(0);
+  const [answer , setAnswer] = useState([]);
+  const [time , setTime] = useState(0);
 
   const quizStartHandle = () => {
 
     setStep(2);
+    interval = setInterval(() => {
+      setTime(prevTime => prevTime + 1)
+    },1000)
   }
+
+// console.log(time)
 
   return (
     <div className="App">
-     {console.log(resultArray[1])}
      {step === 1 && <Start onQuizStart={quizStartHandle}/>}
      {step === 2 && <Question data={resultArray[activeQuestion]}
+                              onAnswerUpdate={setAnswer}
                               activeQuestion={activeQuestion}
-                              onSetActiveQuestion={setActiveQuestion}/>}
+                              numberOfQuestion={resultArray.length}
+                              onSetActiveQuestion={setActiveQuestion}
+                              time={time}
+                              />}
+      {step === 3 && <End/>}
     </div>
   );
 }
